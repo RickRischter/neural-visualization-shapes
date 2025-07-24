@@ -1,0 +1,6 @@
+venv/
+*.pth
+__pycache__/
+images_28x28/
+labels_28x28/
+neuron_top_indices/
