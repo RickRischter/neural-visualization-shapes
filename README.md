@@ -28,7 +28,7 @@ This project is intended for students learning about neural networks, activation
 ├── labels_28x28/                   # Auto-generated label files (not included in repo)
 ├── neuron_top_indices/             # Generated neuron data (not included in repo)
 ├── shape_classifier.pth            # Trained model (not included in repo)
-├── shape_classifier_accuracy.png   # Accuracy plot saved after training
+├── shape_classifier_accuracy.png   # Accuracy plot saved after training (not included in repo)
 ├── suggestions.md                  # List of ideas and possible improvements
 └── README.md                       # This file
 ```
@@ -115,22 +115,6 @@ python view_max_activations_gui.py
 - Observe how neurons specialize in different features
 - Connect activations to model decisions
 - Encourage exploratory analysis of neural networks
-
----
-
-## 🔍 Requirements
-
-- Python 3.x
-- PyTorch
-- Pillow
-- torchvision
-- tqdm
-
-Install them via pip:
-
-```bash
-pip install torch torchvision pillow tqdm
-```
 
 ---
 
