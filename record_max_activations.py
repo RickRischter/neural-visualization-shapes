@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 from torchvision import transforms
 from PIL import Image
+from tqdm import tqdm
 
 # Diretórios
 IMG_DIR = "images_28x28"
@@ -51,7 +52,7 @@ layer3_list = []
 
 # Itera sobre as imagens
 n_imgs = len(os.listdir(IMG_DIR))
-for i in range(n_imgs):
+for i in tqdm(range(n_imgs), desc="Processing images"):
     path = os.path.join(IMG_DIR, f"{i:05}.png")
     img = Image.open(path).convert("RGB")
     x = transform(img).unsqueeze(0)
