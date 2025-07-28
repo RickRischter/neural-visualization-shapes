@@ -26,10 +26,31 @@ def generate_random_shape_params():
         color (tuple): RGB color
     """
     shape_type = random.choice(["rectangle", "ellipse"])
-    x0, y0 = np.random.randint(0, IMG_SIZE - 1, size=2)
-    x1, y1 = np.random.randint(0, IMG_SIZE, size=2)
+    x0, y0 = np.random.randint(0, IMG_SIZE - 1 - 2, size=2)
+    x1, y1 = np.random.randint(2, IMG_SIZE - 1, size=2)
     x0, x1 = sorted([x0, x1])
     y0, y1 = sorted([y0, y1])
+
+    if x1 == x0:
+        x0 -= 1
+        x1 += 1
+
+    if y1 == y0:
+        y0 -= 1
+        y1 += 1
+    
+    if x1 - x0 == 1:
+        if random.choice([0,1]) == 0:
+            x0 -= 1
+        else:
+            x1 += 1
+            
+    if y1 - y0 == 1:
+        if random.choice([0,1]) == 0:
+            y0 -= 1
+        else:
+            y1 += 1
+
     color = random_color()
     return shape_type, x0, y0, x1, y1, color
 
